@@ -134,7 +134,7 @@ _FUNCTIONS = [
      'Return the Z coordinate of the point, or ``None`` if not available. '
      'Input must be a point.'),
 	 
-	('ST_GeomFromGeoJSON', types.Geometry,
+    ('ST_GeomFromGeoJSON', types.Geometry,
      'Converts a GeoJSON geo String to a Geometry object'
      'Input must be a JSON Geometry fragment (not a whole JSON document).'),     
 
