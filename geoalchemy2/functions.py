@@ -326,7 +326,12 @@ _FUNCTIONS = [
      'Douglas-Peucker algorithm'),
 	 
     ('ST_MakeLine', types.Geometry,
-     'Creates a Linestring from point or line geometries.'),	     
+     'Creates a Linestring from point or line geometries.'),
+     
+    ('ST_FlipCoordinates', types.Geometry,
+     'Returns a version of the given geometry with X and Y axis flipped.'
+     'Useful for people who have built latitude/longitude features and need to fix them.'),     
+     
 
     #
     # Raster Constructors
