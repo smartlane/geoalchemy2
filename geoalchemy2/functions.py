@@ -177,6 +177,9 @@ _FUNCTIONS = [
     ('ST_AsEWKT', None,
      'Return the Well-Known Text (WKT) representation of the geometry/'
      'geography with SRID metadata.'),
+     
+     ('ST_LineFromEncodedPolyline', None,
+     'Creates a LineString from an Encoded Polyline.'),
 
     #
     # Spatial Relationships and Measurements
