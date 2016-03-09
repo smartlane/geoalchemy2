@@ -330,7 +330,11 @@ _FUNCTIONS = [
      
     ('ST_FlipCoordinates', types.Geometry,
      'Returns a version of the given geometry with X and Y axis flipped.'
-     'Useful for people who have built latitude/longitude features and need to fix them.'),     
+     'Useful for people who have built latitude/longitude features and need to fix them.'), #
+     
+    ('ST_Line_Interpolate_Point', types.Geometry,
+     'Returns a point interpolated along a line. ' 
+     'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),	
      
 
     #
