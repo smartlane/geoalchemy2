@@ -177,6 +177,9 @@ _FUNCTIONS = [
     ('ST_AsEWKT', None,
      'Return the Well-Known Text (WKT) representation of the geometry/'
      'geography with SRID metadata.'),
+     
+    ('ST_LineFromEncodedPolyline', None,
+     'Creates a LineString from an Encoded Polyline.'),
 
     #
     # Spatial Relationships and Measurements
@@ -323,14 +326,16 @@ _FUNCTIONS = [
      'Douglas-Peucker algorithm'),
 	 
     ('ST_MakeLine', types.Geometry,
-     'Creates a Linestring from point or line geometries.'),	
+     'Creates a Linestring from point or line geometries.'),
+	 
+    ('ST_FlipCoordinates', types.Geometry,
+     'Returns a version of the given geometry with X and Y axis flipped.'
+     'Useful for people who have built latitude/longitude features and need to fix them.'),   	 
 	 
     ('ST_Line_Interpolate_Point', types.Geometry,
      'Returns a point interpolated along a line. ' 
 	 'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),	 
-     
-	 
-
+    
     #
     # Raster Constructors
     #
