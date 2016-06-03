@@ -335,7 +335,13 @@ _FUNCTIONS = [
     ('ST_Line_Interpolate_Point', types.Geometry,
      'Returns a point interpolated along a line. ' 
      'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),	
-     
+
+    ('ST_LineLocatePoint', types.Geometry,
+     'Returns a float between 0 and 1 representing the location of the closest point on LineString to the given Point, as a fraction of total 2d line length.'),	
+	 
+    ('ST_Line_Substring', types.Geometry,
+     'Return a linestring being a substring of the input one starting and ending at the given fractions of total 2d length.'
+	'Second and third arguments are float8 values between 0 and 1.'),	     
 
     #
     # Raster Constructors
