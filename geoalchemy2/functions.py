@@ -136,7 +136,10 @@ _FUNCTIONS = [
 	 
     ('ST_GeomFromGeoJSON', types.Geometry,
      'Converts a GeoJSON geo String to a Geometry object'
-     'Input must be a JSON Geometry fragment (not a whole JSON document).'),     
+     'Input must be a JSON Geometry fragment (not a whole JSON document).'),   
+     
+    ('ST_GeomFromEWKT ', None,
+     'Return a specified ST_Geometry value from Extended Well-Known Text representation (EWKT).'),       
 
     #
     # Geometry Editors
