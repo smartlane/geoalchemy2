@@ -1,10 +1,20 @@
 GeoAlchemy 2 Changelog
 ======================
 
+0.4.0
+-----
+
+* Adapt links for "Read the Docs". @adamchainz (#134)
+* Simplify and fix tests. @elemoine (#138)
+* Set result_type when using operators. @elemoine (#140)
+* Add use_typmod option for AddGeometryColumn. @tsauerwein (#141)
+
 0.3.0
 -----
 
 * Read geometries with ST_AsEWKB. @loicgasser, @fredj, @elemoine (#122)
+* Fix SpatialElement.__str__ on Python 3 @b11z, @elemoine (#130)
+* Fix flake8 in tests @loicgrasser (#125)
 
 0.2.6
 -----

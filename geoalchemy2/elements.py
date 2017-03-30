@@ -4,7 +4,7 @@ from geoalchemy2.compat import PY3
 try:
     from sqlalchemy.sql import functions
     from sqlalchemy.sql.functions import FunctionElement
-except ImportError:  # SQLA < 0.9
+except ImportError:  # SQLA < 0.9  # pragma: no cover
     from sqlalchemy.sql import expression as functions
     from sqlalchemy.sql.expression import FunctionElement
 from sqlalchemy.types import to_instance
@@ -39,13 +39,11 @@ class _SpatialElement(object):
         self.extented = extended
 
     def __str__(self):
-        if not PY3:
-            return self.desc
-        return self.desc.decode('utf-8')
+        return self.desc
 
     def __repr__(self):
-        return "<%s at 0x%x; %r>" % \
-            (self.__class__.__name__, id(self), str(self))  # pragma: no cover
+        return "<%s at 0x%x; %s>" % \
+            (self.__class__.__name__, id(self), self)  # pragma: no cover
 
     def __getattr__(self, name):
         #
@@ -115,7 +113,11 @@ class WKBElement(_SpatialElement, functions.Function):
         """
         This element's description string.
         """
-        return binascii.hexlify(self.data)
+        desc = binascii.hexlify(self.data)
+        if PY3:
+            # hexlify returns a bytes object on py3
+            desc = str(desc, encoding="utf-8")
+        return desc
 
 
 class RasterElement(FunctionElement):
@@ -145,10 +147,14 @@ class RasterElement(FunctionElement):
         This element's description string.
         """
         desc = binascii.hexlify(self.data)
+        if PY3:
+            # hexlify returns a bytes object on py3
+            desc = str(desc, encoding="utf-8")
+
         if len(desc) < 30:
             return desc
 
-        return desc[:30] + '...'
+        return desc[:30] + '...'  # pragma: no cover
 
     def __getattr__(self, name):
         #
