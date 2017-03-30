@@ -133,10 +133,13 @@ _FUNCTIONS = [
     ('ST_Z', None,
      'Return the Z coordinate of the point, or ``None`` if not available. '
      'Input must be a point.'),
-	 
+
     ('ST_GeomFromGeoJSON', types.Geometry,
      'Converts a GeoJSON geo String to a Geometry object'
-     'Input must be a JSON Geometry fragment (not a whole JSON document).'),     
+     'Input must be a JSON Geometry fragment (not a whole JSON document).'),   
+     
+    ('ST_GeomFromEWKT ', types.Geometry,
+     'Return a specified ST_Geometry value from Extended Well-Known Text representation (EWKT).'),       
 
     #
     # Geometry Editors
@@ -330,15 +333,22 @@ _FUNCTIONS = [
 
     ('ST_FlipCoordinates', types.Geometry,
      'Returns a version of the given geometry with X and Y axis flipped.'
-     'Useful for people who have built latitude/longitude features and need to fix them.'),   	 
+     'Useful for people who have built latitude/longitude features and need to fix them.'),
      
     ('ST_Line_Interpolate_Point', types.Geometry,
      'Returns a point interpolated along a line. ' 
-     'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),	
+     'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),
 
     ('ST_ClusterKMeans', types.Geometry,
-     'Windowing function that returns integer id for the cluster each input geometry is in.'),	
+     'Windowing function that returns integer id for the cluster each input geometry is in.'),
      
+    ('ST_LineLocatePoint', types.Geometry,
+     'Returns a float between 0 and 1 representing the location of the closest point on LineString to the given Point, as a fraction of total 2d line length.'),
+
+    ('ST_LineSubstring', types.Geometry,
+     'Return a linestring being a substring of the input one starting and ending at the given fractions of total 2d length.'
+     'Second and third arguments are float8 values between 0 and 1.'),	     
+
 
     #
     # Raster Constructors
