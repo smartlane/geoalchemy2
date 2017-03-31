@@ -327,6 +327,9 @@ _FUNCTIONS = [
      'Returns a geometry that represents the point set union of the '
      'Geometries.'),
 
+    ('ST_Multi', types.Geometry,
+     'Return the geometry as a MULTI* geometry.'), 
+
     ('ST_Simplify', types.Geometry,
      'Returns a "simplified" version of the given geometry using the '
      'Douglas-Peucker algorithm'),
