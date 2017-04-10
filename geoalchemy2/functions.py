@@ -345,7 +345,7 @@ _FUNCTIONS = [
      'Returns a point interpolated along a line. ' 
      'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),
 
-    ('ST_ClusterKMeans', types.Geometry,
+    ('ST_ClusterKMeans', None,
      'Windowing function that returns integer id for the cluster each input geometry is in.'),
      
     ('ST_LineLocatePoint', types.Geometry,
