@@ -337,6 +337,9 @@ _FUNCTIONS = [
     ('ST_MakeLine', types.Geometry,
      'Creates a Linestring from point or line geometries.'),
 
+    ('ST_MakePoint', types.Geometry,
+     'Creates a 2D,3DZ or 4D point geometry.'),
+
     ('ST_FlipCoordinates', types.Geometry,
      'Returns a version of the given geometry with X and Y axis flipped.'
      'Useful for people who have built latitude/longitude features and need to fix them.'),
@@ -345,7 +348,7 @@ _FUNCTIONS = [
      'Returns a point interpolated along a line. ' 
      'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),
 
-    ('ST_ClusterKMeans', types.Geometry,
+    ('ST_ClusterKMeans', None,
      'Windowing function that returns integer id for the cluster each input geometry is in.'),
      
     ('ST_LineLocatePoint', types.Geometry,
