@@ -136,10 +136,10 @@ _FUNCTIONS = [
 
     ('ST_GeomFromGeoJSON', types.Geometry,
      'Converts a GeoJSON geo String to a Geometry object'
-     'Input must be a JSON Geometry fragment (not a whole JSON document).'),   
-     
+     'Input must be a JSON Geometry fragment (not a whole JSON document).'),
+
     ('ST_GeomFromEWKT ', types.Geometry,
-     'Return a specified ST_Geometry value from Extended Well-Known Text representation (EWKT).'),       
+     'Return a specified ST_Geometry value from Extended Well-Known Text representation (EWKT).'),
 
     #
     # Geometry Editors
@@ -183,9 +183,14 @@ _FUNCTIONS = [
     ('ST_AsEWKT', None,
      'Return the Well-Known Text (WKT) representation of the geometry/'
      'geography with SRID metadata.'),
-     
+
     ('ST_LineFromEncodedPolyline', None,
      'Creates a LineString from an Encoded Polyline.'),
+
+    ('ST_AsEncodedPolyline', None,
+     'Returns the geometry as an Encoded Polyline. This format is used by '
+     'Google Maps with precision=5 and by Open Source Routing Machine with precision=5 and 6.'),
+
 
     #
     # Spatial Relationships and Measurements
@@ -328,12 +333,12 @@ _FUNCTIONS = [
      'Geometries.'),
 
     ('ST_Multi', types.Geometry,
-     'Return the geometry as a MULTI* geometry.'), 
+     'Return the geometry as a MULTI* geometry.'),
 
     ('ST_Simplify', types.Geometry,
      'Returns a "simplified" version of the given geometry using the '
      'Douglas-Peucker algorithm'),
- 
+
     ('ST_MakeLine', types.Geometry,
      'Creates a Linestring from point or line geometries.'),
 
@@ -343,20 +348,20 @@ _FUNCTIONS = [
     ('ST_FlipCoordinates', types.Geometry,
      'Returns a version of the given geometry with X and Y axis flipped.'
      'Useful for people who have built latitude/longitude features and need to fix them.'),
-     
+
     ('ST_Line_Interpolate_Point', types.Geometry,
-     'Returns a point interpolated along a line. ' 
+     'Returns a point interpolated along a line. '
      'Second argument is a float8 between 0 and 1 representing fraction of total length of linestring the point has to be located.'),
 
     ('ST_ClusterKMeans', None,
      'Windowing function that returns integer id for the cluster each input geometry is in.'),
-     
+
     ('ST_LineLocatePoint', types.Geometry,
      'Returns a float between 0 and 1 representing the location of the closest point on LineString to the given Point, as a fraction of total 2d line length.'),
 
     ('ST_LineSubstring', types.Geometry,
      'Return a linestring being a substring of the input one starting and ending at the given fractions of total 2d length.'
-     'Second and third arguments are float8 values between 0 and 1.'),	     
+     'Second and third arguments are float8 values between 0 and 1.'),
 
 
     #
